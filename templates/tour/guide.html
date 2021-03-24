@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Guide
+{% endblock %}
+
+{% block page_title %}
+Guide
+{% endblock %}
+
+{% block main %}
+<form action="" method="post">{% csrf_token %}
+    {{ form|crispy }}
+<button type="submit" class="btn btn-primary">submit</button>
+</form>
+<br>
+<br>
+
+<div class="card">
+    <div class="card-header">
+        Information Visualization
+    </div>
+    <div class="card-body">
+
+<a href="/tour/guide/turn_on/"><button type="submit" class="btn btn-primary">start</button></a>
+<a href="/tour/guide/turn_off/"><button type="submit" class="btn btn-primary">close</button></a>
+<a href="/tour/guide/refresh/"><button type="submit" class="btn btn-primary">fresh</button></a>
+   </div>
+</div>
+<br>
+<br>
+<div class="card">
+    <div class="card-header">
+        Boat Status
+    </div>
+    <div class="card-body">
+        Status: {{ boot.status }}<br>
+        Port: {{ boot.port }}
+	
+    </div>
+<br>
+<br>
+
+
+
+</div>
+{% endblock %}
+
